@@ -21,29 +21,29 @@ public class randomGeneration : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        for (int g = 0; g <= 64; g++)
+        for (int g = 0; g <= 40; g++)
         {
             randomNumber = Random.Range(0, 10);
             if (randomNumber == 0 || randomNumber == 1) {
-                obsEasyClone = Instantiate(obsEasy, new Vector2(this.gameObject.transform.position.x + distance, this.gameObject.transform.position.y), Quaternion.identity) as GameObject;
+                obsEasyClone = Instantiate(obsEasy, new Vector2(this.gameObject.transform.position.x + distance, 2.1f), Quaternion.identity) as GameObject;
             }
             if (randomNumber == 2 || randomNumber == 3)
             {
-                obsMediumClone = Instantiate(obsMedium, new Vector2(this.gameObject.transform.position.x + distance, this.gameObject.transform.position.y), Quaternion.identity) as GameObject;
+                obsMediumClone = Instantiate(obsMedium, new Vector2(this.gameObject.transform.position.x + distance, 2.18f), Quaternion.identity) as GameObject;
             }
             if (randomNumber == 4 || randomNumber == 5){
-                obsHardClone = Instantiate(obsHard, new Vector2(this.gameObject.transform.position.x + distance, this.gameObject.transform.position.y), Quaternion.identity) as GameObject;
+                obsHardClone = Instantiate(obsHard, new Vector2(this.gameObject.transform.position.x + distance, 2.02f), Quaternion.identity) as GameObject;
             }
             if (randomNumber == 6 || randomNumber == 7){
-                obsDashClone = Instantiate(obsDash, new Vector2(this.gameObject.transform.position.x + distance, this.gameObject.transform.position.y), Quaternion.identity) as GameObject;
+                obsDashClone = Instantiate(obsDash, new Vector2(this.gameObject.transform.position.x + distance, 2.06f), Quaternion.identity) as GameObject;
             }
             if (randomNumber == 8){
-                obsEspinhosClone = Instantiate(obsEspinhos, new Vector2(this.gameObject.transform.position.x + distance, this.gameObject.transform.position.y), Quaternion.identity) as GameObject;
+                obsEspinhosClone = Instantiate(obsEspinhos, new Vector2(this.gameObject.transform.position.x + distance, 2.21f), Quaternion.identity) as GameObject;
            }
             if (randomNumber == 9){
-                obsVeryHardClone = Instantiate(obsVeryHard, new Vector2(this.gameObject.transform.position.x + distance, this.gameObject.transform.position.y), Quaternion.identity) as GameObject;
+                obsVeryHardClone = Instantiate(obsVeryHard, new Vector2(this.gameObject.transform.position.x + distance, 2.078f), Quaternion.identity) as GameObject;
             }
-            distance = distance + 15;
+            distance = distance + 13;
         }
     }
 	
