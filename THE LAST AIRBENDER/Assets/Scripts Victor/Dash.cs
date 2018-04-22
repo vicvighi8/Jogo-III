@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Dash : MonoBehaviour {
 
+    public AudioClip dashSound1;
+    public AudioClip dashSound2;
+
+
+
+
+
     [Header("Normal Variables")]
     private Animator animator;
     private BoxCollider2D myCollider;
@@ -38,6 +45,7 @@ public class Dash : MonoBehaviour {
 
                 if (Input.GetKeyDown(tecla))
                     {
+                        SoundManagerScript.instance.RandomizeSfx(dashSound1, dashSound2);
                         savedVelocity.x = myRigidbody.velocity.x;
                         myRigidbody.AddForce(new Vector2 (dashForce*2f, 0));
                         animator.SetBool("isDashingOrange", true);
@@ -46,8 +54,7 @@ public class Dash : MonoBehaviour {
                         dashState = DashState.Dashing;
                         playerJump.grounded = true;
                         player2Jump.grounded = true;
-                        Debug.Log(myRigidbody.velocity);       
-                    }
+                }
                 animator.Play("isWalkingBlue");
                 animator.Play("isWalkingOrange");
                 break;

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/cena_igor_1.unity
+- path: Assets/Scenes/cena_igor2.unity
   isLoaded: 1
   isActive: 1

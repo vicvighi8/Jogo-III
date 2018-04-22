@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts Victor\StartScene\clicaPlay.cs" />
     <Compile Include="Assets\Scripts Victor\StartScene\goToGame.cs" />
     <Compile Include="Assets\Scripts Victor\Troca.cs" />
+    <Compile Include="Assets\SoundManagerScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

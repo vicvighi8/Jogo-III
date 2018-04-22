@@ -5,6 +5,9 @@ using UnityEngine;
 public class playerJump : MonoBehaviour
 {
 
+    public AudioClip jumpSound1;
+    public AudioClip jumpSound2;
+
     [Header("PUBLIC")]
     private Animator animator;
     public float jumpForce;
@@ -40,6 +43,7 @@ public class playerJump : MonoBehaviour
 
         if (Input.GetKeyDown(tecla))
         {
+            SoundManagerScript.instance.RandomizeSfx(jumpSound1, jumpSound2);
             if (grounded && this.gameObject == player.gameObject)
             {
                 myRigidbody.AddForce(new Vector2(0, 30), ForceMode2D.Impulse);
