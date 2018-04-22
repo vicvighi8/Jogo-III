@@ -25,7 +25,9 @@ public class Troca : MonoBehaviour {
 
     public IEnumerator Botao() {
         botao.interactable = false;
+        botao.GetComponent<Animator>().SetTrigger("go");
         yield return new WaitForSeconds(5f);
+        botao.GetComponent<Animator>().SetTrigger("back");
         botao.interactable = true;
     }
 }

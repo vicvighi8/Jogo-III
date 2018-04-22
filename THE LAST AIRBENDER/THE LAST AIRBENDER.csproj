@@ -90,6 +90,8 @@
     <Compile Include="Assets\Scripts Victor\playerJumpB.cs" />
     <Compile Include="Assets\Scripts Victor\playerMoveV.cs" />
     <Compile Include="Assets\Scripts Victor\randomGeneration.cs" />
+    <Compile Include="Assets\Scripts Victor\StartScene\clicaPlay.cs" />
+    <Compile Include="Assets\Scripts Victor\StartScene\goToGame.cs" />
     <Compile Include="Assets\Scripts Victor\Troca.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
