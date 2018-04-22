@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/cena_igor2.unity
+=======
+- path: Assets/Scenes/cena1victor.unity
+>>>>>>> 43e2ddd9e87ec65a67dfcb866ea41a9883bd1977
   isLoaded: 1
   isActive: 1

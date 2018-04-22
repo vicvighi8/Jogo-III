@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+<<<<<<< HEAD
 public class Troca : MonoBehaviour
 {
 
@@ -12,9 +13,16 @@ public class Troca : MonoBehaviour
     public AudioClip changeSound2;
 
 
+=======
+public class Troca : MonoBehaviour {
+    [Header("Normal Variables")]
+>>>>>>> 43e2ddd9e87ec65a67dfcb866ea41a9883bd1977
 
     public static bool trocou;
     public Button botao;
+    public GameObject imgDash;
+    public GameObject imgJump;
+    private bool inverter = true;
 
     // Use this for initialization
     void Start()
@@ -26,6 +34,17 @@ public class Troca : MonoBehaviour
     public void Ativar()
     {
         trocou = !trocou;
+        if (inverter == true)
+        {
+            imgDash.GetComponent<Animator>().SetTrigger("go1");
+            imgJump.GetComponent<Animator>().SetTrigger("go1");
+            inverter = false;
+        }
+        else {
+            imgDash.GetComponent<Animator>().SetTrigger("go2");
+            imgJump.GetComponent<Animator>().SetTrigger("go2");
+            inverter = true;
+        }
         StartCoroutine(Botao());
         image.GetComponent<Image>().color = Color.yellow;
         SoundManagerScript.instance.RandomizeSfx(changeSound1, changeSound2);

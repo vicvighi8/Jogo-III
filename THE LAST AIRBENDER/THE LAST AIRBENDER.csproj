@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts Victor\Dash.cs" />
     <Compile Include="Assets\Scripts Victor\deathMove.cs" />
     <Compile Include="Assets\Scripts Victor\Lazer.cs" />
+    <Compile Include="Assets\Scripts Victor\meteoroButton.cs" />
     <Compile Include="Assets\Scripts Victor\moveLaser.cs" />
     <Compile Include="Assets\Scripts Victor\player2Jump.cs" />
     <Compile Include="Assets\Scripts Victor\player2JumpB.cs" />
