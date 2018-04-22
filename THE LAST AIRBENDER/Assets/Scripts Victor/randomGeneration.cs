@@ -43,7 +43,7 @@ public class randomGeneration : MonoBehaviour {
             if (randomNumber == 9){
                 obsVeryHardClone = Instantiate(obsVeryHard, new Vector2(this.gameObject.transform.position.x + distance, 2.078f), Quaternion.identity) as GameObject;
             }
-            distance = distance + 13;
+            distance = distance + 15;
         }
     }
 	

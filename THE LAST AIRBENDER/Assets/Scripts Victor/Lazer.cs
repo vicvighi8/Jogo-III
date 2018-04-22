@@ -27,7 +27,9 @@ public class Lazer : MonoBehaviour {
     }
 
     public IEnumerator timing() {
-        yield return new WaitForSeconds(8f);
+        botao.GetComponent<Animator>().SetTrigger("go");
+        yield return new WaitForSeconds(10f);
+        botao.GetComponent<Animator>().SetTrigger("back");
         botao.interactable = true;
         laser = false;
     }
