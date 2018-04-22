@@ -5,6 +5,7 @@ using UnityEngine;
 public class Dash : MonoBehaviour {
 
     [Header("Normal Variables")]
+    private Animator animator;
     private BoxCollider2D myCollider;
     private Rigidbody2D myRigidbody;
     public Vector2 savedVelocity;
@@ -20,6 +21,7 @@ public class Dash : MonoBehaviour {
     void Start()
     {
         myRigidbody = gameObject.GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     // Update is called once per frame
     void FixedUpdate() {
@@ -38,20 +40,24 @@ public class Dash : MonoBehaviour {
                     {
                         savedVelocity.x = myRigidbody.velocity.x;
                         myRigidbody.AddForce(new Vector2 (dashForce*2f, 0));
+                        animator.SetBool("isDashingOrange", true);
+                        animator.SetBool("isDashingBlue", true);
                         //myRigidbody.velocity = new Vector2(myRigidbody.velocity.x * 20f, myRigidbody.velocity.y);
                         dashState = DashState.Dashing;
                         playerJump.grounded = true;
                         player2Jump.grounded = true;
-                        Debug.Log(myRigidbody.velocity);
-                          
+                        Debug.Log(myRigidbody.velocity);       
                     }
-                
+                animator.Play("isWalkingBlue");
+                animator.Play("isWalkingOrange");
                 break;
 
             case DashState.Dashing:
                 dashTimer += Time.deltaTime * 3f;
                 if (dashTimer >= maxDash)
                 {
+                    animator.SetBool("isDashingOrange", false);
+                    animator.SetBool("isDashingBlue", false);
                     dashTimer = maxDash;
                     myRigidbody.velocity = savedVelocity;
                     dashState = DashState.CoolDown;

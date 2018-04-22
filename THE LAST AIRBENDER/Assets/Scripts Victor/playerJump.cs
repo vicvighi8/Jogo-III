@@ -6,6 +6,7 @@ public class playerJump : MonoBehaviour
 {
 
     [Header("PUBLIC")]
+    private Animator animator;
     public float jumpForce;
     public static bool grounded;
     public LayerMask whatIsGround;
@@ -20,7 +21,7 @@ public class playerJump : MonoBehaviour
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myCollider = GetComponent<Collider2D>();
-
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -32,19 +33,32 @@ public class playerJump : MonoBehaviour
         {
             tecla = KeyCode.W;
         }
-        else {
-            tecla = KeyCode.UpArrow;        
+        else
+        {
+            tecla = KeyCode.UpArrow;
         }
 
-            if (Input.GetKeyDown(tecla)){
-                if (grounded && this.gameObject == player.gameObject)            {
-                    myRigidbody.AddForce(new Vector2(0, 30), ForceMode2D.Impulse);
-                }
-                
-                if (grounded && this.gameObject == player2.gameObject) {
-                    myRigidbody.AddForce(new Vector2(0, -30), ForceMode2D.Impulse);
-                }
+        if (Input.GetKeyDown(tecla))
+        {
+            if (grounded && this.gameObject == player.gameObject)
+            {
+                myRigidbody.AddForce(new Vector2(0, 30), ForceMode2D.Impulse);
+                animator.SetBool("isJumpingBlue", true);
+                animator.Play("isJumpingBlue");
+            }
+
+            if (grounded && this.gameObject == player2.gameObject)
+            {
+                myRigidbody.AddForce(new Vector2(0, -30), ForceMode2D.Impulse);
+                animator.SetBool("isJumpingOrange", true);
+                animator.Play("isJumpingOrange");
+            }
         }
-        
+                animator.SetBool("isWalkingBlue", true);
+                animator.SetBool("isJumpingBlue", false);
+
+                animator.SetBool("isWalkingOrange", true);
+                animator.SetBool("isJumpingOrange", false);
+
+          }
     }
-}
