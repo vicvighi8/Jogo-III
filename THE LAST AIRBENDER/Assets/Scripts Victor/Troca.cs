@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Troca : MonoBehaviour {
+    [Header("Normal Variables")]
 
     public static bool trocou;
     public Button botao;
+    public GameObject imgDash;
+    public GameObject imgJump;
+    private bool inverter = true;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +24,17 @@ public class Troca : MonoBehaviour {
 
     public void Ativar() {
         trocou = !trocou;
+        if (inverter == true)
+        {
+            imgDash.GetComponent<Animator>().SetTrigger("go1");
+            imgJump.GetComponent<Animator>().SetTrigger("go1");
+            inverter = false;
+        }
+        else {
+            imgDash.GetComponent<Animator>().SetTrigger("go2");
+            imgJump.GetComponent<Animator>().SetTrigger("go2");
+            inverter = true;
+        }
         StartCoroutine(Botao());
     }
 
